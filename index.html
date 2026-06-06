@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorium 5 - Docker</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #e0f0f0; }
+        .box { display: inline-block; text-align: left; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Informacje o aplikacji</h2>
+        <p><strong>Adres IP serwera:</strong> <span id="ip"></span></p>
+        <p><strong>Nazwa serwera:</strong> <span id="host"></span></p>
+        <p><strong>Wersja aplikacji:</strong> <span id="version">VERSION_PLACEHOLDER</span></p>
+    </div>
+
+    <script>
+        // Skrypt pobiera dane z obiektu lokalizacji przeglądarki, 
+        // co w sieci dockera odpowiada adresowi IP/nazwie kontenera.
+        document.getElementById('ip').textContent = window.location.hostname === 'localhost' ? '127.0.0.1' : window.location.host;
+        document.getElementById('host').textContent = window.location.hostname;
+    </script>
+</body>
+</html>
